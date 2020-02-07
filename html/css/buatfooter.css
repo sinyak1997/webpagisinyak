@@ -1,0 +1,59 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+footer{
+    background-color: rgb(179, 179, 179);
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 600px;
+}
+
+/* hak cipta */
+
+.hak-cipta-class{
+    width: 100%;
+    height: 40px;
+    margin: 0px;
+    background-color: rgb(172, 24, 164);
+}
+.hak-cipta-class p{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding-top: 12px;
+}
+.hak-cipta-class p:hover{
+    color: rgb(31, 192, 197);
+}
+/* style medsos */
+
+.icon-medsos ul{
+    padding: 36px;
+    margin: 3px;
+    text-align: center;
+}
+.icon-medsos ul li{
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    margin: -5px 7px;  
+    border-radius: 100%;
+}
+.icon-medsos ul li:hover{
+    background-color: rgb(31, 192, 197);
+}
+.icon-medsos ul li a{
+    display: block;
+}
+.icon-medsos ul li a img{
+    width: 68px;
+    padding-top: 1px;
+}
+
+
+

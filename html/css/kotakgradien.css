@@ -1,0 +1,60 @@
+.gradien{
+    position: relative;
+    /* left: 282px; */
+}
+
+.Kotak-1{
+    width: 100px;
+    height: 100px;
+    border: 10px solid rgb(187, 187, 187);
+    padding: 19px ;
+    margin: 100px;
+    background-image: linear-gradient(45deg, rgb(26, 188, 156), rgb(52, 73, 94));
+}
+.Kotak-1:hover{
+    width: 100px;
+    height: 100px;
+    padding: 19px ;
+    margin: 100px;
+    background-image: linear-gradient(45deg, #45aaf2, #fed330);
+    border-radius: 100px;
+    
+}
+.Kotak-2{
+    width: 100px;
+    height: 100px;
+    border: 10px solid rgb(187, 187, 187);
+    padding: 19px ;
+    margin: 100px;
+    background-image: linear-gradient(45deg, rgb(199, 52, 35), rgb(250, 152, 58));
+    position: relative;
+    bottom: 258px;
+    left: 210px;
+}
+.Kotak-2:hover{
+    width: 100px;
+    height: 100px;
+    padding: 19px ;
+    margin: 100px;
+    background-image: linear-gradient(45deg, rgb(224, 86, 253), rgb(255, 138, 71));
+    border-radius: 100px;
+}
+.Kotak-3{
+    width: 100px;
+    height: 100px;
+    border: 10px solid rgb(187, 187, 187);
+    padding: 19px ;
+    margin: 100px;
+    background-image: linear-gradient(45deg,rgb(41, 128, 185),rgb(241, 196, 15));
+    position: relative;
+    bottom: 516px;
+    left: 420px;
+}
+.Kotak-3:hover{
+    width: 100px;
+    height: 100px;
+    padding: 19px ;
+    margin: 100px;
+    background-image: linear-gradient(45deg, rgb(62, 184, 255), rgb(48, 51, 107));
+    border-radius: 100px;
+}

@@ -1,0 +1,75 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{}
+
+/* tag menu navbar */
+.navbar{
+    background-image: linear-gradient(45deg,rgb(248, 120, 70), rgb(250, 65, 188));
+    text-align: center;
+    z-index: 1000;
+}
+.navbar ul{
+    display: inline-flex;
+    list-style: none;
+    color: #fff;
+}
+.navbar ul li{
+    width: 120px;
+    margin: px;
+    padding: 19px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.navbar ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+/* menghidupkan dengan warna menu (Beranda)*/
+.hidup, .navbar ul li:hover{
+    background: rgba(20, 11, 11, 0.342);
+    border-radius: 10px; 
+}
+/* menghidupkan dengan warna menu (Tutorial, Blog, Tentang kami, Template) */
+.navbar ul li:hover{
+    background: rgb(7, 7, 7);
+    border-radius: 0px;
+}
+
+/* css sub menu */
+.sub-menu{
+    display: none;
+}
+.navbar ul li:hover .sub-menu{
+    display: block;
+    position: fixed;
+    z-index: 10;
+    background-image: linear-gradient(45deg, rgb(248, 120, 70), rgb(250, 65, 188));
+    margin-top: 20px;
+    margin-left: -19px;
+    border-radius: 0px;
+}
+.navbar ul li:hover .sub-menu ul{
+    display: block;
+    margin: 10px;
+}
+.navbar ul li:hover .sub-menu ul li{
+    width: 155px;
+    padding: 10px;
+    border-bottom: 1px dotted #fff ;
+    border-radius: 0;
+    text-align: left;
+}
+.navbar ul li:hover .sub-menu ul li:last-child{
+    border-bottom: none;
+}
+.navbar ul li:hover .sub-menu ul li a:hover{
+    color: red;
+}
+.navbar ul li a:hover{
+    color: red;
+}
+/* icon menu */
+.icon{
+    float: right;
+}
