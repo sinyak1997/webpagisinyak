@@ -8,7 +8,7 @@
     echo "Harga yang harus dibayar = Rp.$harga_net"
 ?>
 <br>
-
+<hr>
 <?php
     $halaman=13;
     if($halaman%2==0)
@@ -49,8 +49,7 @@
 <br>
 <br>
 <br>
-<br>
-<br>
+<hr>
 
 
 <!-- penampilan menentukan variabel data siswa -->
@@ -75,7 +74,7 @@
 <br>
 <br>
 <br>
-<br>
+<hr>
 <!-- variabel define -->
 
 <?php
@@ -96,7 +95,7 @@
 <br>
 <br>
 <br>
-<br>
+<hr>
 
 <!-- hitungan baru -->
 
@@ -112,6 +111,7 @@
 <br>
 <br>
 <br>
+<hr>
 <!--  -->
 <?php
     $a=5;
@@ -128,7 +128,7 @@
 <br>
 <br>
 <br>
-
+<hr>
 <!-- ini tugas dari baoak ade -->
 
 <?php
@@ -151,9 +151,7 @@
 ?>
 <br>
 <br>
-<br>
-<br>
-
+<hr>
 <!-- pemberian nilai -->
 <?php
     $nama='Rahmat Taisir';
