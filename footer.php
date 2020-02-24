@@ -1,6 +1,5 @@
  <!--==================================== footer =======================================-->
-
- <footer class="page-footer font-small navbar-dark bg-" style="background-image: linear-gradient(45deg, #1ca296, #a947d2); pt-4">
+<footer class="page-footer font-small navbar-dark bg-" style="background-image: linear-gradient(45deg, #1ca296, #a947d2); pt-4">
 
 <!-- Footer Links -->
 <div class="container-fluid text-center text-md-left">
@@ -82,11 +81,12 @@
 
 </footer>
 
-            <!--==================================== footer =======================================-->
+            <!--==================================== close footer =======================================-->
 
-
-<!-- js for bundle -->
+                    <!-- =====================Peletakan java sript==================== -->
+<!-- js jquary -->
 <script src="assets/js/jquary.js"></script>
+<!-- js for bundle -->
 <script src="assets/js/bootstrap.bundle.js"></script>
 <script src="assets/js/bootstrap.bundle.js.map"></script>
 <script src="assets/js/bootstrap.bundle.min.js"></script>
@@ -96,5 +96,7 @@
 <script src="assets/js/bootstrap.js.map"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/bootstrap.min.js.map"></script>
+
+
 </body>
 </html>

@@ -1,16 +1,16 @@
-<html>
-<head>
-    <title>Bootstrap Part 13 : Membuat Form dengan Bootstrap</title>
+<?php
+	include 'header.php';
+?>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-	
-</head>
-<body>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">	
+
 
 	<div class="jumbotron">
-		<h1 class="display-4">Cek Harga Diskon</h1>
-		<p class="lead"><div class="container">		
-		<h1>Membuat Form dengan Bootstrap Diskon Harga</h1> <hr>
+		<h1 class="display-4">UD. BEEGALAK KAH</h1>
+		<p class="lead">
+			<div class="container">		
+				<h1>Cek Diskon Harga</h1> <hr>
 		<form class="form-horizontal" action="" method="POST">
 		<div class="form-group">
 				<label class="control-label col-sm-2" >Nama Barang:</label>
@@ -33,7 +33,8 @@
 			<input type="submit" name="jml_bayar" value="Cek Men" class="btn btn-danger">
 			
 		</form>		
-	</div></p>
+	    	</div>
+		</p>
 		<hr class="my-4">
 		<p>
 			<?php
@@ -42,12 +43,12 @@
 					$harga_barang=$_POST ['hrg_brg'];
 					$diskon=$_POST ['diskon'];
 					$syarat=400000;
-					$beli=$harga_barang-($harga_barang*$diskon/100);
+					$dibayar=$harga_barang-($harga_barang*$diskon/100);
 
 					if ($harga_barang>=$syarat){
 						echo "
 							<div class='alert alert-info' role='alert'>
-							Anda telah membeli $nama_barang dan mendapatkan potongan harga $diskon %, total yang dibayar $beli
+							Anda telah membeli $nama_barang dan mendapatkan potongan harga $diskon%, total yang dibayar Rp.$dibayar
 							</div>
 						";
 					}else {
@@ -57,5 +58,8 @@
 			?>
 		</p>
 	</div>
-</body>
-</html> 
+	<br>
+	<?php
+    include'footer.php';
+?>
+	
