@@ -1,5 +1,6 @@
- <!--==================================== footer =======================================-->
-<footer class="page-footer font-small navbar-dark bg-" style="background-image: linear-gradient(45deg, #1ca296, #a947d2); pt-4">
+<!--==================================== footer =======================================-->
+
+<footer class="page-footer font-small navbar-dark pt-4" style="background-image: linear-gradient(45deg, #1ca296, #a947d2);">
 
 <!-- Footer Links -->
 <div class="container-fluid text-center text-md-left">
