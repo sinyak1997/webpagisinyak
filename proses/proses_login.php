@@ -1,8 +1,9 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <?php
 include'../koneksi/koneksi.php';
 
     if (isset($_POST['input'])){
-            $username=md5($_POST['usrnm']);
+            $username=$_POST['usrnm'];
             $password=md5($_POST['pass']);
 
             // query
@@ -31,12 +32,15 @@ include'../koneksi/koneksi.php';
                     echo"<script>
                             alert(window.location.href='../nilai_bootstrap.php');
                         </script>";
-                }else{
-                echo "<div class='alert alert-danger'role='alert'>
-                        Gagal
-                    </div>";
                 }
             }
+            else{
+                echo "
+                    <div class='alert alert-danger' role='alert'>
+                        Login gagal, username dan password salah!
+                    </div>
+                    ";
+                }
 
     //     if ($username=="admin"&&$password=="admin123"){
     //         echo "<script>

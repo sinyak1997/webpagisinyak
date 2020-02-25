@@ -129,7 +129,7 @@ body {
 	min-width: 260px;
 	margin-top: 50px;
 	padding: 30px 25px;
-  border-radius: 5px;
+	border-radius: 5px;
 	transform-origin: top;
 }
 
@@ -242,7 +242,7 @@ body {
 
 .input-block label {
 	font-size: 14px;
-  color: #a1b4b4;
+	color: #a1b4b4;
 }
 
 .input-block input {
@@ -254,9 +254,9 @@ body {
 	font-size: 16px;
 	line-height: 40px;
 	color: #3b4465;
-  background: #eef9fe;
-  border: 1px solid #cddbef;
-  border-radius: 2px;
+	background: #eef9fe;
+	border: 1px solid #cddbef;
+	border-radius: 2px;
 }
 
 .form [type='submit'] {
