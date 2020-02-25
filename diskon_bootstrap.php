@@ -79,5 +79,9 @@
 			<!-- close -->
 		</p>
 	</div>
+	<br>
+	<?php
+		include'footer.php';
+	?>
 	
 	
