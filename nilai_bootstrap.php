@@ -77,51 +77,50 @@
         <br>    
 
             <!-- php -->
-    <?php
-        if (isset($_POST['tambah'])){
-            $nim=$_POST ['nim'];
-            $nama=$_POST ['nama'];
-            $jurusan=$_POST ['jurusan'];
-            $harian=$_POST ['harian'];
-            $quiz=$_POST ['quiz'];
-            $uts=$_POST ['uts'];
-            $uas=$_POST ['uas'];
-            $nilai=($harian*0.1)+($quiz*0.15)+($uts*0.35)+($uas*0.4);
+<?php
+include'koneksi/koneksi.php';
 
-            if ($nilai<=50){
-                echo "
-                    <div class='alert alert-danger' role='alert'>
-                        Nilai ".$data['nama_mahasiswa']." dengan ".$data['nim_mahasiswa']." di ".$data['jurusan']." nilai yang akan tertera 
-                        ".$data['nilai']." adalah E <br>
-                    </div>
-                ";
-            }else if ($nilai<=65){
-                echo "
-                    <div class='alert alert-danger' role='alert'>
-                        Nilai ".$data['nama_mahasiswa']." dengan ".$data['nim_mahasiswa']." di ".$data['jurusan']." nilai yang akan tertera ".$data['nilai']." adalah D <br>
-                    </div>
-                ";
-            }else if ($nilai<=72){
-                echo "
-                    <div class='alert alert-warning' role='alert'>
-                    Nilai ".$data['nama_mahasiswa']." dengan ".$data['nim_mahasiswa']." di ".$data['jurusan']." nilai yang akan tertera ".$data['nilai']." adalah C <br>
-                    </div>
-                ";
-            }else if ($nilai<=83){
-                echo "
-                    <div class='alert alert-success' role='alert'>
-                        Nilai ".$data['nama_mahasiswa']." dengan ".$data['nim_mahasiswa']." di ".$data['jurusan']." nilai yang akan tertera ".$data['nilai']." adalah B <br>
-                    </div>
-                ";
-            }else if ($nilai<=100 || $nilai>=100){
-                echo "
-                    <div class='alert alert-success' role='alert'>
-                        Nilai ".$data['nama_mahasiswa']." dengan ".$data['nim_mahasiswa']." di ".$data['jurusan']." nilai yang akan tertera ".$data['nilai']." adalah A <br>
-                    </div>
-                ";
-            }
-        }    
-    ?>
+    $tampilkan_nilai=mysqli_query($koneksi,"SELECT * FROM nilai")or die(mysqli_error($tampilkan_nilai));
+
+    while($data=mysqli_fetch_array($tampilkan_nilai)){
+    if($data['nilai']<=50){
+        echo "
+            <div class='alert alert-danger' role='alert'>
+                Nilai ".$data['nama_mahasiswa']." dengan ".$data['nim_mahasiswa']." di ".$data['jurusan']." nilai yang akan tertera 
+                ".$data['nilai']." adalah E <br>
+            </div>
+        ";
+    }else if($data['nilai']<=65){
+        echo "
+            <div class='alert alert-danger' role='alert'>
+                Nilai ".$data['nama_mahasiswa']." dengan ".$data['nim_mahasiswa']." di ".$data['jurusan']." nilai yang akan tertera 
+                ".$data['nilai']." adalah D <br>
+            </div>
+        ";
+    }else if($data['nilai']<=72){
+        echo "
+            <div class='alert alert-warning' role='alert'>
+            Nilai ".$data['nama_mahasiswa']." dengan ".$data['nim_mahasiswa']." di ".$data['jurusan']." nilai yang akan tertera 
+            ".$data['nilai']." adalah C <br>
+            </div>
+        ";
+    }else if($data['nilai']<=83){
+        echo "
+            <div class='alert alert-success' role='alert'>
+                Nilai ".$data['nama_mahasiswa']." dengan ".$data['nim_mahasiswa']." di ".$data['jurusan']." nilai yang akan tertera 
+                ".$data['nilai']." adalah B <br>
+            </div>
+        ";
+    }else if($data['nilai']<=100 || $data['nilai']>=100){
+        echo "
+            <div class='alert alert-success' role='alert'>
+                Nilai ".$data['nama_mahasiswa']." dengan ".$data['nim_mahasiswa']." di ".$data['jurusan']." nilai yang akan tertera 
+                ".$data['nilai']." adalah A <br>
+            </div>
+        ";
+        }
+    }
+?>
 			
 		
 
