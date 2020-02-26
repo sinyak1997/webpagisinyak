@@ -1,3 +1,7 @@
+<?php
+	include 'header.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,13 +14,13 @@
 </head>
 <body>
     <div class="container">		
-		<h1>Penilaian Siswa</h1> <hr>
-		<form class="form-horizontal" action="" method="POST">
+		<center><h1>PENILAIAN MAHASISWA PBA UIN AR-RANIRY</h1> <hr></center>
+		<form class="form-horizontal" action="proses/proses_nilai.php" method="POST">
 			<div class="form-group">
 				<label class="control-label col-sm-2">Nim:</label>
 				<div class="col-sm-10">
 					<input type="number" class="form-control" name="nim" placeholder="Masukkan Nim">
-			    </div>
+                </div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-1">Nama:</label>
@@ -33,14 +37,14 @@
 
             <!-- tabel untuk nilai -->
             <div class="container">
-        <div class="row">
-            <div class="col-md-3">
+                <div class="row">
+                    <div class="col-md-3">
             <!-- contennya -->
-            <label class="control-label col-sm-1">Harian:</label>
-                <div class="col-sm-10">
+                    <label class="control-label col-sm-1">Harian:</label>
+                        <div class="col-sm-10">
                         <input type="number" class="form-control" name="harian" placeholder="Masukkan Nilainumber">
-                </div>
-            </div>
+                        </div>
+                    </div>
             <div class="col-md-3">
             <!-- contennya -->
             <label class="control-label col-sm-1">Quiz:</label>
@@ -61,14 +65,17 @@
                 <div class="col-sm-10">
                         <input type="number" class="form-control" name="uas" placeholder="Masukkan Nilai">
                 </div>
-            </div>
+                </div>
+                </div>
         </div>
-    </div>
         <br>   
             <!-- input submitnya -->
-            <input type="submit" name="tambah" value="Cek Men" class="btn btn-warning">
+            <input type="submit" name="gaspul" value="Cek Men" class="btn btn-warning">
+        </form>		
+	</div>
         <br>
         <br>    
+
             <!-- php -->
     <?php
         if (isset($_POST['tambah'])){
@@ -84,40 +91,44 @@
             if ($nilai<=50){
                 echo "
                     <div class='alert alert-danger' role='alert'>
-                        Nilai $nama dengan $nim di $jurusan nilai yang akan tertera $nilai adalah E <br>
+                        Nilai ".$data['nama_mahasiswa']." dengan ".$data['nim_mahasiswa']." di ".$data['jurusan']." nilai yang akan tertera 
+                        ".$data['nilai']." adalah E <br>
                     </div>
                 ";
             }else if ($nilai<=65){
                 echo "
                     <div class='alert alert-danger' role='alert'>
-                        Nilai $nama dengan $nim di $jurusan nilai yang akan tertera $nilai adalah D <br>
+                        Nilai ".$data['nama_mahasiswa']." dengan ".$data['nim_mahasiswa']." di ".$data['jurusan']." nilai yang akan tertera ".$data['nilai']." adalah D <br>
                     </div>
                 ";
             }else if ($nilai<=72){
                 echo "
                     <div class='alert alert-warning' role='alert'>
-                    Nilai $nama dengan $nim di $jurusan nilai yang akan tertera $nilai adalah C <br>
+                    Nilai ".$data['nama_mahasiswa']." dengan ".$data['nim_mahasiswa']." di ".$data['jurusan']." nilai yang akan tertera ".$data['nilai']." adalah C <br>
                     </div>
                 ";
             }else if ($nilai<=83){
                 echo "
                     <div class='alert alert-success' role='alert'>
-                        Nilai $nama dengan $nim di $jurusan nilai yang akan tertera $nilai adalah B <br>
+                        Nilai ".$data['nama_mahasiswa']." dengan ".$data['nim_mahasiswa']." di ".$data['jurusan']." nilai yang akan tertera ".$data['nilai']." adalah B <br>
                     </div>
                 ";
             }else if ($nilai<=100 || $nilai>=100){
                 echo "
                     <div class='alert alert-success' role='alert'>
-                        Nilai $nama dengan $nim di $jurusan nilai yang akan tertera $nilai adalah A <br>
+                        Nilai ".$data['nama_mahasiswa']." dengan ".$data['nim_mahasiswa']." di ".$data['jurusan']." nilai yang akan tertera ".$data['nilai']." adalah A <br>
                     </div>
                 ";
             }
         }    
     ?>
 			
-		</form>		
-	</div>
+		
 
-
+    
 </body>
 </html>
+
+<?php
+    include'footer.php';
+?>
