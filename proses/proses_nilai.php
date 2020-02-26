@@ -38,11 +38,11 @@
                 ';
         }
         else{
-            echo "
-                    <div class='alert alert-danger' role='alert'>
-                        Data gagal diinput, mampus mu!
-                    </div>
-                ";
+            echo '
+                <script>
+                alert("data berhasil diimput",window.location.href="../nilai_bootstrap.php");
+                </script>
+                '';
         }
     }
 ?>

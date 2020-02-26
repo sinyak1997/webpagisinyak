@@ -83,42 +83,53 @@ include'koneksi/koneksi.php';
     $tampilkan_nilai=mysqli_query($koneksi,"SELECT * FROM nilai")or die(mysqli_error($tampilkan_nilai));
 
     while($data=mysqli_fetch_array($tampilkan_nilai)){
-    if($data['nilai']<=50){
-        echo "
-            <div class='alert alert-danger' role='alert'>
-                Nilai ".$data['nama_mahasiswa']." dengan ".$data['nim_mahasiswa']." di ".$data['jurusan']." nilai yang akan tertera 
-                ".$data['nilai']." adalah E <br>
-            </div>
-        ";
-    }else if($data['nilai']<=65){
-        echo "
-            <div class='alert alert-danger' role='alert'>
-                Nilai ".$data['nama_mahasiswa']." dengan ".$data['nim_mahasiswa']." di ".$data['jurusan']." nilai yang akan tertera 
-                ".$data['nilai']." adalah D <br>
-            </div>
-        ";
-    }else if($data['nilai']<=72){
-        echo "
-            <div class='alert alert-warning' role='alert'>
-            Nilai ".$data['nama_mahasiswa']." dengan ".$data['nim_mahasiswa']." di ".$data['jurusan']." nilai yang akan tertera 
-            ".$data['nilai']." adalah C <br>
-            </div>
-        ";
-    }else if($data['nilai']<=83){
-        echo "
-            <div class='alert alert-success' role='alert'>
-                Nilai ".$data['nama_mahasiswa']." dengan ".$data['nim_mahasiswa']." di ".$data['jurusan']." nilai yang akan tertera 
-                ".$data['nilai']." adalah B <br>
-            </div>
-        ";
-    }else if($data['nilai']<=100 || $data['nilai']>=100){
-        echo "
-            <div class='alert alert-success' role='alert'>
-                Nilai ".$data['nama_mahasiswa']." dengan ".$data['nim_mahasiswa']." di ".$data['jurusan']." nilai yang akan tertera 
-                ".$data['nilai']." adalah A <br>
-            </div>
-        ";
-        }
+
+        if($data['nilai']<=50){
+            echo "
+                <div class='alert alert-danger' role='alert'>
+                    Nilai ".$data['nama_mahasiswa']." Dengan Nim ".$data['nim_mahasiswa']." Pada Jurusan ".$data['jurusan']." Mendapatkan Nilai 
+                    ".$data['nilai']." Dengan Grade E 
+                    <a href='edit_nilai.php?id_mahasiswa=".$data['id_mahasiswa']."' type='submit' class='btn btn-info'>Edit</a> 
+                    <br>
+                </div>
+            ";
+        }else if($data['nilai']<=65){
+            echo "
+                <div class='alert alert-danger' role='alert'>
+                    Nilai ".$data['nama_mahasiswa']." Dengan Nim ".$data['nim_mahasiswa']." Pada Jurusan ".$data['jurusan']." Mendapatkan Nilai
+                    ".$data['nilai']." Dengan Grade D 
+                    <a href='edit_nilai.php?id_mahasiswa=".$data['id_mahasiswa']."' type='submit' class='btn btn-info'>Edit</a>
+                    <br>
+                </div>
+            ";
+        }else if($data['nilai']<=72){
+            echo "
+                <div class='alert alert-warning' role='alert'>
+                Nilai ".$data['nama_mahasiswa']." Dengan Nim ".$data['nim_mahasiswa']." Pada Jurusan ".$data['jurusan']." Mendapatkan Nilai 
+                ".$data['nilai']." Dengan Grade C 
+                <a href='edit_nilai.php?id_mahasiswa=".$data['id_mahasiswa']."' type='submit' class='btn btn-info'>Edit</a>
+                <br>
+                </div>
+            ";
+        }else if($data['nilai']<=83){
+            echo "
+                <div class='alert alert-success' role='alert'>
+                    Nilai ".$data['nama_mahasiswa']." Dengan Nim ".$data['nim_mahasiswa']." Pada Jurusan ".$data['jurusan']." Mendapatkan Nilai 
+                    ".$data['nilai']." Dengan Grade B 
+                    <a href='edit_nilai.php?id_mahasiswa=".$data['id_mahasiswa']."' type='submit' class='btn btn-info'>Edit</a>
+                    <br>
+                </div>
+            ";
+        }else if($data['nilai']<=100 || $data['nilai']>=100){
+            echo "
+                <div class='alert alert-success' role='alert'>
+                    Nilai ".$data['nama_mahasiswa']." Dengan Nim ".$data['nim_mahasiswa']." Pada Jurusan ".$data['jurusan']." Mendapatkan Nilai 
+                    ".$data['nilai']." Dengan Grade A 
+                    <a href='edit_nilai.php?id_mahasiswa=".$data['id_mahasiswa']."' type='submit' class='btn btn-info'>Edit</a>
+                    <br>
+                </div>
+            ";
+            }
     }
 ?>
 			
