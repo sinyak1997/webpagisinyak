@@ -14,10 +14,21 @@
         $uts=$_POST['uts'];
         $uas=$_POST['uas'];
         $nilai=($harian*0.1)+($quiz*0.15)+($uts*0.35)+($uas*0.4);
-        
+
+        if($nilai<=50){
+            $grade='E';
+        }else if($nilai<=65){
+            $grade='D';
+        }else if($nilai<=72){
+            $grade='C';
+        }else if($nilai<=83){
+            $grade='B';
+        }else if($nilai<=100 || $nilai>=100){
+            $grade='A';
+        }
 
         $input_nilai=mysqli_query($koneksi,"INSERT into nilai VALUES('$id_mahasiswa','$nim_mahasiswa',
-        '$nama_mahasiswa','$jurusan','$harian','$quiz','$uts','$uas','$nilai')")or die(mysqli_error($input_nilai));
+        '$nama_mahasiswa','$jurusan','$harian','$quiz','$uts','$uas','$nilai','$grade')")or die(mysqli_error($input_nilai));
 
         if($input_nilai){
             echo '
