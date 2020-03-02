@@ -2,12 +2,6 @@
 	include 'header.php';
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     
@@ -26,13 +20,19 @@
 				<label class="control-label col-sm-1">Nama:</label>
 				<div class="col-sm-10">
 					<input type="text" class="form-control" name="nama" placeholder="Masukkan Nama Anda">
-			    </div>
+                </div>
             </div>
             <div class="form-group">
 				<label class="control-label col-sm-1">Jurusan:</label>
 				<div class="col-sm-10">
 					<input type="text" class="form-control" name="jurusan" placeholder="Masukkan Nama Anda">
-			    </div>
+                </div>
+            </div>
+            <div class="form-group">
+				<label class="control-label col-sm-1">Mata Kuliah:</label>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" name="matakuliah" placeholder="Masukkan Nama Anda">
+                </div>
             </div>
 
             <!-- tabel untuk nilai -->
@@ -42,7 +42,7 @@
             <!-- contennya -->
                     <label class="control-label col-sm-1">Harian:</label>
                         <div class="col-sm-10">
-                        <input type="number" class="form-control" name="harian" placeholder="Masukkan Nilainumber">
+                        <input type="number" class="form-control" name="harian" placeholder="Masukkan Nilai">
                         </div>
                     </div>
             <div class="col-md-3">
@@ -80,6 +80,7 @@
 <?php
 include'koneksi/koneksi.php';
 
+
     $tampilkan_nilai=mysqli_query($koneksi,"SELECT * FROM nilai")or die(mysqli_error($tampilkan_nilai));
 
     while($data=mysqli_fetch_array($tampilkan_nilai)){
@@ -87,58 +88,81 @@ include'koneksi/koneksi.php';
         if($data['nilai']<=50){
             echo "
                 <div class='alert alert-danger' role='alert'>
-                    Nilai ".$data['nama_mahasiswa']." Dengan Nim ".$data['nim_mahasiswa']." Pada Jurusan ".$data['jurusan']." Mendapatkan Nilai 
-                    ".$data['nilai']." Dengan Grade E 
-                    <a href='edit_nilai.php?id_mahasiswa=".$data['id_mahasiswa']."' type='submit' class='btn btn-info'>Edit</a> 
+                    Nilai ".$data['nama_mahasiswa']." Dengan Nim ".$data['nim_mahasiswa']." di Jurusan ".$data['jurusan']." Pada Mata Kuliah 
+                    ".$data['mata_kuliah']." Mendapatkan Nilai ".$data['nilai']." Dengan Grade E 
                     <br>
+                    <a href='edit_nilai.php?id_mahasiswa=".$data['id_mahasiswa']."' type='submit' class='btn btn-info'>Edit</a>
+                    <a href='proses/proses_hapus_nilai.php?id_mahasiswa=".$data['id_mahasiswa']."' type='submit' class='btn btn-danger'>Delete</a>
                 </div>
             ";
         }else if($data['nilai']<=65){
             echo "
                 <div class='alert alert-danger' role='alert'>
-                    Nilai ".$data['nama_mahasiswa']." Dengan Nim ".$data['nim_mahasiswa']." Pada Jurusan ".$data['jurusan']." Mendapatkan Nilai
-                    ".$data['nilai']." Dengan Grade D 
-                    <a href='edit_nilai.php?id_mahasiswa=".$data['id_mahasiswa']."' type='submit' class='btn btn-info'>Edit</a>
+                    Nilai ".$data['nama_mahasiswa']." Dengan Nim ".$data['nim_mahasiswa']." di Jurusan ".$data['jurusan']." Pada Mata Kuliah 
+                    ".$data['mata_kuliah']." Mendapatkan Nilai ".$data['nilai']." Dengan Grade D 
                     <br>
+                    <a href='edit_nilai.php?id_mahasiswa=".$data['id_mahasiswa']."' type='submit' class='btn btn-info'>Edit</a>
+                    <a href='proses/proses_hapus_nilai.php?id_mahasiswa=".$data['id_mahasiswa']."' type='submit' class='btn btn-danger'>Delete</a>
+                    
                 </div>
             ";
         }else if($data['nilai']<=72){
             echo "
                 <div class='alert alert-warning' role='alert'>
-                Nilai ".$data['nama_mahasiswa']." Dengan Nim ".$data['nim_mahasiswa']." Pada Jurusan ".$data['jurusan']." Mendapatkan Nilai 
-                ".$data['nilai']." Dengan Grade C 
-                <a href='edit_nilai.php?id_mahasiswa=".$data['id_mahasiswa']."' type='submit' class='btn btn-info'>Edit</a>
+                Nilai ".$data['nama_mahasiswa']." Dengan Nim ".$data['nim_mahasiswa']." di Jurusan ".$data['jurusan']." Pada Mata Kuliah 
+                ".$data['mata_kuliah']." Mendapatkan Nilai ".$data['nilai']." Dengan Grade C 
                 <br>
+                <a href='edit_nilai.php?id_mahasiswa=".$data['id_mahasiswa']."' type='submit' class='btn btn-info' >Edit</a>
+                <a href='proses/proses_hapus_nilai.php?id_mahasiswa=".$data['id_mahasiswa']."' type='submit' class='btn btn-danger'>Delete</a>
+                
                 </div>
             ";
         }else if($data['nilai']<=83){
             echo "
-                <div class='alert alert-success' role='alert'>
-                    Nilai ".$data['nama_mahasiswa']." Dengan Nim ".$data['nim_mahasiswa']." Pada Jurusan ".$data['jurusan']." Mendapatkan Nilai 
-                    ".$data['nilai']." Dengan Grade B 
-                    <a href='edit_nilai.php?id_mahasiswa=".$data['id_mahasiswa']."' type='submit' class='btn btn-info'>Edit</a>
+                <div class='alert alert-primary' role='alert/'>
+                    Nilai ".$data['nama_mahasiswa']." Dengan Nim ".$data['nim_mahasiswa']." di Jurusan ".$data['jurusan']." Pada Mata Kuliah 
+                    ".$data['mata_kuliah']." Mendapatkan Nilai ".$data['nilai']." Dengan Grade B 
                     <br>
+                    <a href='edit_nilai.php?id_mahasiswa=".$data['id_mahasiswa']."' type='submit' class='btn btn-info'>Edit</a>
+                    <a href='proses/proses_hapus_nilai.php?id_mahasiswa=".$data['id_mahasiswa']."' type='submit' class='btn btn-danger'>Delete</a>
                 </div>
             ";
         }else if($data['nilai']<=100 || $data['nilai']>=100){
             echo "
                 <div class='alert alert-success' role='alert'>
-                    Nilai ".$data['nama_mahasiswa']." Dengan Nim ".$data['nim_mahasiswa']." Pada Jurusan ".$data['jurusan']." Mendapatkan Nilai 
-                    ".$data['nilai']." Dengan Grade A 
-                    <a href='edit_nilai.php?id_mahasiswa=".$data['id_mahasiswa']."' type='submit' class='btn btn-info'>Edit</a>
+                    Nilai ".$data['nama_mahasiswa']." Dengan Nim ".$data['nim_mahasiswa']." di Jurusan ".$data['jurusan']." Pada Mata Kuliah 
+                    ".$data['mata_kuliah']." Mendapatkan Nilai ".$data['nilai']." Dengan Grade A 
                     <br>
+                    <a href='edit_nilai.php?id_mahasiswa=".$data['id_mahasiswa']."' type='submit' class='btn btn-info'>Edit</a>
+                    <a href='proses/proses_hapus_nilai.php?id_mahasiswa=".$data['id_mahasiswa']."' type='submit' class='btn btn-danger'>Delete</a>
                 </div>
             ";
             }
     }
 ?>
 			
-		
-
-    
 </body>
 </html>
 
 <?php
     include'footer.php';
 ?>
+
+<script>
+    function hapus(){
+
+        
+swal({
+    title: "Are you sure?",
+    text: "Your will not be able to recover this imaginary file!",
+    type: "warning",
+    showCancelButton: true,
+    confirmButtonClass: "btn-danger",
+    confirmButtonText: "Yes, delete it!",
+    closeOnConfirm: false
+    },
+    function(){
+    swal("Deleted!", "Your imaginary file has been deleted.", "success");
+    });
+}
+</script>

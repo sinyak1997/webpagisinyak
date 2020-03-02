@@ -1,4 +1,8 @@
 <?php
+    include 'header.php';
+?>
+
+<?php
     $arrnilai=array("Ani"=>80,"otim"=>90,"Ana"=>75,"Budi"=>85);
 
     echo "Menampilkan isi array dengan foreach:<br>";

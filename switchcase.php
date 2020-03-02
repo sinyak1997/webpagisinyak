@@ -1,4 +1,8 @@
 <?php
+    include 'header.php';
+?>
+
+<?php
     $hari= "homkah";
     switch ($hari) {
         case 'MIG': $hari="Minggu"; break;

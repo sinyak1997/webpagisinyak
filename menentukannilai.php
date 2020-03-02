@@ -1,4 +1,8 @@
 <?php
+    include 'header.php';
+?>
+
+<?php
     $nama='Rahmat Taisir';
     $nim=160202047;
     $jurusan="Teknik Nahu Sharaf";
