@@ -1,4 +1,9 @@
 <?php
+    session_start();
+    error_reporting(0);
+?>
+
+<?php
     include'../koneksi/koneksi.php';
 
     if (isset($_GET['update'])){
