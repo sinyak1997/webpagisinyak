@@ -23,9 +23,6 @@
                             <li class="breadcrumb-item active">Font-awesome</li>
                         </ol>
                     </div>
-                    <div class="col-md-7 align-self-center">
-                        <a href="https://wrappixel.com/templates/adminwrap/" class="btn waves-effect waves-light btn btn-info pull-right hidden-sm-down"> Upgrade to Pro</a>
-                    </div>
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Bread crumb and right sidebar toggle -->
@@ -765,7 +762,7 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer"> © 2018 Adminwrap by wrappixel.com </footer>
+            <footer class="footer"> © 2018 Design Template by sinyak </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->

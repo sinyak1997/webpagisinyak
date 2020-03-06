@@ -31,7 +31,11 @@
 
     <!--================================== open navbar ==============================-->
     <nav class="navbar navbar-expand-lg navbar-dark " style="background-image: linear-gradient(45deg, #1ca296, #a947d2);">
-        <a class="navbar-brand" href="#"><img src="html/img/tes.png" width=120px alt=""></a>
+        <a class="navbar-brand" href="#"><img src="html/img/mumangkoding.png" width=80px alt=""></a>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-dark " style="background-color:#2c3e50;);">
+    <a class="navbar-brand" href="#">WEB BLK BANDA ACEH</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
@@ -41,11 +45,8 @@
             <li class="nav-item active">
                 <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
             </li>
-
-        
-
             <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+                <a class="nav-link" href="login_admin.php">Login</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
@@ -56,9 +57,6 @@
                 <a class="dropdown-item" href="#">Something else here</a>
                 </div>
             </li>
-    <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-    </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

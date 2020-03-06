@@ -25,15 +25,15 @@
                 </div>
                 <div class="col-md-5">
                     <label for=" class="form-control">Jenis Kelamin :</label><br>
-                    <input id="" type="radio" name="jk" value="Laki-laki">LakiLaki
+                    <input id="" type="radio" name="jk" value="Laki-Laki">Laki-Laki
                     <input id="" type="radio" name="jk" value="Perempuan">Perempuan 
                 </div>
                 <div class="col-md-5">
                     <label for="">Alamat  :</label>
-                    <textarea id="" name="alamat" class="form-control" placeholder=""></textarea>
+                    <textarea id="" name="alamat" class="form-control" placeholder="" cols="50" rows="5" ></textarea>
                 </div>
                 <div class="col-md-5">
-                    <label for="">Tanggal   :</label>
+                    <label for="">Tanggal Lahir  :</label>
                     <input id="" type="date" name="tgl" class="form-control" placeholder="">
                 </div>
                 <div class="col-md-5">
@@ -46,15 +46,19 @@
                 </div>
                 <div class="col-md-5">
                     <label>Hobi :</label><br>
-                    <input id="" type="checkbox" name="hobi1" value="meukawe">Meukawe 
-                    <input id="" type="checkbox" name="hobi2" value="kem">Kem 
-                    <input id="" type="checkbox" name="hobi3" value="poeh_gop">Poeh Gop <br>
+                    <input id="" type="checkbox" name="hobi1" value="Membaca">Membaca 
+                    <input id="" type="checkbox" name="hobi2" value="Menulis">Menulis 
+                    <input id="" type="checkbox" name="hobi3" value="Tertawa">Tertawa <br>
                 </div><br>
                 <div class="col-md-5">
                     <label for="">Photo  :</label>
                     <input id="" type="file" name="photo" class="form-control" placeholder=""><br>
                 </div>
-                    <input type="submit" name="cekmen" value="Gaspul cui"><br>
+                <div class="col-md-2">
+                <input type="submit" name="cekmen" value="Gaspul cui" class="form-control btn-info" ><br>
+                </div>
+                
+                    
                 
             </div>
         </form>

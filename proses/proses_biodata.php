@@ -11,10 +11,10 @@
         $tanggal=$_POST['tgl'];
         $tempat_lahir=$_POST['tl'];
         $no_hp=$_POST['np'];
-        $hobi1=$_POST['hobi1'];
-        $hobi2=$_POST['hobi2'];
-        $hobi3=$_POST['hobi3'];
-        $hobi=($hobi1.','.$hobi2.','.$hobi3);
+        $hobi1=(!empty($_POST['hobi1']))?$_POST['hobi1']:'';
+        $hobi2=(!empty($_POST['hobi2']))?$_POST['hobi2']:'';
+        $hobi3=(!empty($_POST['hobi3']))?$_POST['hobi3']:'';
+        $hobi=($hobi1.''.$hobi2.''.$hobi3);
 
         $nama_file=$_FILES['photo']['name'];
 
@@ -31,12 +31,23 @@
 
         if ($query){
             echo "
-                <script>alert('Data Berhasil Diimput',window.location.href='../biodata.php')</script>
-            ";
+            <script>alert('Data Berhasil Diimput',window.location.href='../biodata.php')</script>
+                ";
         }else{
             echo "
-                <script>alert('Data Gagal Diimput',window.location.href='../biodata.php')</script>
-            ";
+                    <script>alert('Data Gagal Diimput',window.location.href='../biodata.php')</script>
+                ";
         }
     }
+?>
+
+<?php
+    // function hapus($koneksi)
+    // {
+    //     if(isset($_GET['id_biodata'])){
+    //         $id=$_GET['id_biodata'];
+
+    //         $hapus=mysqli_query($koneksi, "DELETE FROM form_biodata WHERE id_biodata='$id'")or die (mysqli_error($hapus))
+    //     }
+    // }
 ?>
